@@ -8,9 +8,9 @@ import (
 // Go looks for functions starting with "Test"
 func TestGetAPIKey(t *testing.T) {
 	
-	// 1. Create fake data (Simulating a bad request)
+	// 1. Create fake data (Simulating a good request)
 	headers := http.Header{}
-	headers.Set("Authorization", "Bearer super-secret-key-123")
+	headers.Set("Authorization", "ApiKey super-secret-key-123")
 
 	// 2. Run the function we are testing
 	gotKey, err := GetAPIKey(headers)
